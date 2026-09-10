@@ -9,6 +9,8 @@ public class Driver{
         BaseEmployee mikeDavenport = new BaseEmployee("Mike", "Davenport", "666-66-6666", 95000);
         CommisionEmployee mahnazVaziri = new CommisionEmployee("Mahnaz", "Vaziri", "777-77-7777", 22, 40000);
 
+        System.out.println("All Employees successfully initialized");
+
     }
 
 }
