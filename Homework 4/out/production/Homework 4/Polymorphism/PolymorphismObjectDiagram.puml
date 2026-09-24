@@ -1,0 +1,20 @@
+@startuml
+
+object "<u>ships[0]:Ship</u>" as s0 {
+    shipName = "Golden Bear"
+    yearBuilt = "1986"
+}
+
+object "<u>ships[1]:CruiseShip</u>" as s1 {
+    shipName = "Titanic"
+    yearBuilt = "1912"
+    maxPassengers = 3327
+}
+
+object "<u>ships[2]:CargoShip</u>" as s2 {
+    shipName = "Pretend It's a Real Cargo Ship"
+    yearBuilt = "1984"
+    cargoCap = 26
+}
+
+@enduml

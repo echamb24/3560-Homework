@@ -1,0 +1,22 @@
+@startuml
+
+object "<u>instructor1:Instructor</u>" as i1 {
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "<u>textbook1:Textbook</u>" as t1 {
+    title = "Clean Code"
+    author = "Robert C. Martin"
+    publisher = "Some Publisher"
+}
+
+object "<u>course1:Course</u>" as c1 {
+    courseName = "CS 3560 - Object Oriented Design and Programming"
+}
+
+c1 o-- i1
+c1 o-- t1
+
+@enduml
