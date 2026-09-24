@@ -1,3 +1,5 @@
+package Polymorphism;
+
 public class Ship {
 
     private String shipName;

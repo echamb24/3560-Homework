@@ -1,3 +1,5 @@
+package Aggregation;
+
 public class Course {
     private String courseName;
 

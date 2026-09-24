@@ -1,3 +1,5 @@
+package Aggregation;
+
 public class Instructor {
     private String firstName;
     private String lastName;

@@ -1,3 +1,5 @@
+package Interface;
+
 public class VendorInvoice implements Payable {
     
     private String name;

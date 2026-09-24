@@ -1,3 +1,5 @@
+package Polymorphism;
+
 public class CargoShip extends Ship {
 
     private int cargoCap;

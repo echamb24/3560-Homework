@@ -1,3 +1,5 @@
+package Interface;
+
 public class Freelancer implements Payable{
     
     private String firstName;

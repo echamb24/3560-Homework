@@ -1,3 +1,5 @@
+package Inheritance;
+
 public class CommisionEmployee extends Employee {
 
     private int comRate;
