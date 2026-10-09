@@ -1,0 +1,33 @@
+@startuml
+title School Facility Rental - Activity
+|Renter|
+start
+:Choose facility and date;
+|Website|
+:Check availability;
+if (available?) then (yes)
+:Create request;
+else (no)
+:Show not available;
+stop
+endif
+
+@enduml
+
+
+@startuml
+title School Facility Rental - Sequence
+actor Renter
+participant Website
+participant "School Staff" as Staff
+participant "Payment Service" as Pay
+participant "Email Service" as Email
+Renter -> Website: submit request
+Website -> Staff: send request for review
+alt approved
+Staff --> Website: approved
+
+else rejected
+Staff --> Website: rejected
+end
+@enduml
