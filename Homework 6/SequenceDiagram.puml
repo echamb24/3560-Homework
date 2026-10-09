@@ -1,33 +1,37 @@
 @startuml
-title School Facility Rental - Activity
-|Renter|
-start
-:Choose facility and date;
-|Website|
-:Check availability;
-if (available?) then (yes)
-:Create request;
-else (no)
-:Show not available;
-stop
-endif
-
-@enduml
-
-
-@startuml
 title School Facility Rental - Sequence
+
 actor Renter
 participant Website
-participant "School Staff" as Staff
+actor "School Staff" as Staff
 participant "Payment Service" as Pay
 participant "Email Service" as Email
+
 Renter -> Website: submit request
+Website -> Website: check availability
 Website -> Staff: send request for review
+
 alt approved
-Staff --> Website: approved
+  Staff --> Website: approved
+  Website -> Pay: process payment
+
+  alt payment succeeds
+    Pay --> Website: payment success
+    Website -> Website: save booking
+    Website -> Email: trigger confirmation email
+    Email --> Renter: send confirmation email
+  else payment fails
+    Pay --> Website: payment failure
+    Website -> Website: record failure
+    Website -> Email: trigger failure email
+    Email --> Renter: send failure email
+  end
 
 else rejected
-Staff --> Website: rejected
+  Staff --> Website: rejected
+  Website -> Website: record rejection
+  Website -> Email: trigger rejection email
+  Email --> Renter: send rejection email
 end
+
 @enduml
